@@ -1,13 +1,14 @@
-package framework.elements;
+package framework.cars.elements;
 
 import framework.GeneralFunctions;
 import framework.webdriver.BrowserFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Properties;
 
 /**
- * Created by d.korobkin on 6/20/17.
+ * Created by d.korobkin on 6/21/17.
  */
 public class BasePage extends BaseEntity {
     private static final String MAIN_PROPERTY_PATH = "config.properties";
@@ -17,6 +18,10 @@ public class BasePage extends BaseEntity {
     private static WebDriver driver;
 
     public BasePage() {
+    }
+
+    public BasePage(By titleLocator, String title) {
+
     }
 
     public BasePage(WebDriver driver) {
@@ -36,7 +41,7 @@ public class BasePage extends BaseEntity {
         BrowserFactory.exit();
     }
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 

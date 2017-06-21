@@ -1,4 +1,4 @@
-package framework.elements;
+package framework.cars.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -31,9 +31,18 @@ public class Select extends BaseElement {
     }
 
     @Override
+    public boolean isDisplayed() {
+        return false;
+    }
+
+    @Override
     public void moveTo() {
         Actions action = new Actions(super.getDriver());
         action.moveToElement(select).build().perform();
     }
 
+    @Override
+    public String getAttribute(String str) {
+        return null;
+    }
 }

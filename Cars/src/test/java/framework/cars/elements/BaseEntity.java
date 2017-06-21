@@ -1,4 +1,4 @@
-package framework.elements;
+package framework.cars.elements;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +18,7 @@ public class BaseEntity {
         driver = driver1;
     }
 
-    public  WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 

@@ -27,6 +27,10 @@ public class GeneralFunctions {
         }
         return property;
     }
+
+    public static int generateRandomValue(int size) {
+        return (int)(2 + (Math.random() * (size - 2)));
+    }
 }
 
 

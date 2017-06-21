@@ -5,10 +5,14 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import framework.elements.BaseEntity;
-import framework.elements.BasePage;
+import framework.cars.elements.BaseEntity;
+import framework.cars.elements.BasePage;
+import framework.cars.menu.Menu;
+import framework.cars.model.Car;
+import framework.cars.pages.MainPage;
 import framework.webdriver.BrowserFactory;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import java.util.Properties;
 
@@ -32,37 +36,24 @@ public class MyStepdefs {
         basePage.maximiseWindow();
         basePage.navigate(mainPage);
         baseEntity = new BaseEntity();
-        throw new PendingException();
     }
 
     @When("^In the search, the user choose \"([^\"]*)\"$")
     public void inTheSearchTheUserChoose(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        MainPage mainPage = new MainPage();
+        mainPage.menu.navigateMenu(Menu.MenuItem.READ);
+
     }
 
     @Then("^\"([^\"]*)\" tab is displayed$")
     public void tabIsDisplayed(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        Assert.assertTrue(true, String.valueOf(Menu.MenuItem.READ));
     }
 
     @When("^The user searches for randomly selected characteristics$")
     public void theUserSearchesForRandomlySelectedCharacteristics() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @And("^The values have been successfully selected in the combobox$")
-    public void theValuesHaveBeenSuccessfullySelectedInTheCombobox() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @And("^After entering the data, the user press the button Search$")
-    public void afterEnteringTheDataTheUserPressTheButtonSearch() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        MainPage mainPage = new MainPage();
+        Car theFirstCar = mainPage.InputRandomValue();
     }
 
     @Then("^After clicking on the Search button, a page describing the auto$")

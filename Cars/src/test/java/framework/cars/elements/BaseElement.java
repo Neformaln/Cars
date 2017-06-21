@@ -1,4 +1,4 @@
-package framework.elements;
+package framework.cars.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,9 +18,11 @@ public abstract class BaseElement extends BaseEntity {
 
     public abstract void click();
     public abstract String getText();
+    public abstract boolean isDisplayed();
     public abstract void moveTo();
+    public abstract String getAttribute(String str);
 
-    public List<WebElement> findElements(String by) {
+    public static List<WebElement> findElements(String by) {
         return getDriver().findElements(By.xpath(by));
     }
 
