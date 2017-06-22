@@ -22,7 +22,9 @@ public class Button extends BaseElement {
 
     @Override
     public void click() {
-
+    Actions actions = new Actions(super.getDriver());
+    actions.moveToElement(button).build().perform();
+    button.click();
     }
 
     @Override

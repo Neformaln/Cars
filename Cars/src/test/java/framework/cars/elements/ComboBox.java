@@ -35,6 +35,7 @@ public class ComboBox extends BaseElement {
         return cmbSelect.getText();
     }
 
+
     @Override
     public boolean isDisplayed() {
         return false;
@@ -47,10 +48,10 @@ public class ComboBox extends BaseElement {
 
     @Override
     public String getAttribute(String str) {
-        return null;
+        return cmbSelect.getAttribute(str);
     }
 
-    public void DropComboBox(){
+    public void dropComboBox(){
         Actions actions = new Actions(super.getDriver());
         actions.moveToElement(cmbDrDown).build().perform();
         cmbDrDown.click();
